@@ -1,0 +1,119 @@
+{
+"products":[
+{
+  "id":"1",
+  "img":"jordan-retro-1.jpg",
+  "name":"jordan mid 1",
+  "year":"1985",
+  "price":"98.02",
+  "available":"yes",
+  "views":[
+             {"id":"1", "img":"air-jordan-1-mid-black-white-two-shoes.jpg"},
+             {"id":"2", "img":"air-jordan-1-mid-black-white-top-view.jpg"},
+             {"id":"3", "img":"jordan-retro-1-mid-facing-right.jpg"},
+             {"id":"4", "img":"jordan-retro-1.jpg" }
+           ],
+  "colors":[
+              {"id":"1","color":"red-and-black"},
+              {"id":"2","color":"black-and-white"},
+              {"id":"3","color":"grey"},
+              {"id":"4","color":"white-and-grey"}
+           ],
+  "sizes": [
+             {"id":"1","size":"6"},
+             {"id":"2","size":"6.5"},
+             {"id":"3","size":"7"},
+             {"id":"4","size":"7.5"},
+             {"id":"5","size":"8"},
+             {"id":"6","size":"8.5"},
+             {"id":"7","size":"9"},
+             {"id":"8","size":"9.5"},
+             {"id":"9","size":"10"}
+           ],
+   "sales":"FEB 5, 2018 15:37:25"
+   
+ },
+ {
+    "id": "2",
+    "img":"jordan_retro_5.jpg",
+    "name":"jordan retro 5",
+    "year":"1990",
+    "price":"189.99",
+    "available":"yes",
+    "views":[
+             {"id":"1", "img":"jordan-retro-5-grey-and-red.png"},
+             {"id":"2", "img":"jordan-retro-5-both-sneakers.png"},
+             {"id":"3", "img":"jordan-retro-5-both-sneakers-top-angle.png"},
+             {"id":"4", "img":"jordan-retro-5-grey-and-red-facing-left.png"},
+             {"id":"5", "img":"jordan_retro_5.jpg"} 
+           ],
+    "colors":[
+               {"id":"1","color":"black-and-grey"},
+               {"id":"2","color":"white-and-wolf grey"},
+               {"id":"3","color":"black"}],
+    "sizes":[
+               { "id":"1","size":"8"},
+               {"id":"2","size":"8.5"},
+               {"id":"3","size":"9"},
+               {"id":"4","size":"9.5"}
+            ],
+     "sales": "MAR 18, 2018 15:37:25"
+  },
+{
+   "id":"3",
+   "img":"air-jordan-6-retro-bg-gs-carmine-white-carmine-black-.png",
+   "name":"jordan retro 6",
+   "year":"1991",
+   "price":"198.93",
+   "available":"yes",
+   "views":[
+             {"id":"1", "img":"jordan-retro-6-shoe-facing-oppsite.png"},
+             {"id":"2", "img":"jordan-retro-6-facing-left.png"},
+             {"id":"3", "img":"jordan-retro-6-from-top.png"},
+             {"id":"4", "img":"air-jordan-6-retro-bg-gs-carmine-white-carmine-black-.png"}
+           ],
+   "colors":[
+             { "id":"1","color":"black-and-purple.jpg"},
+             { "id":"2","color":"white-and-red.jpg"}
+            ],
+   "sizes": [
+             {"id":"1","size":"6"},
+             {"id":"2","size":"6.5"},
+             {"id":"3","size":"7"},
+             {"id":"4","size":"7.5"},
+             {"id":"5","size":"8"},
+             {"id":"6","size":"8.5"},
+             {"id":"7","size":"9"},
+             {"id":"8","size":"9.5"},
+             {"id":"9","size":"10"}
+            ],
+     "sales":"FEB 10, 2018 15:37:25"
+  },
+  {
+     "id":"4",
+     "img":"Air-Jordan-12-Retro-Dark-Grey.jpg",
+     "name":"jordan retro 12",
+     "year":"1996",
+     "price":"269.57",
+     "available":"yes",
+     "views":[
+             {"id":"1", "img":"Air-Jordan-12-Retro-Dark-Grey-top-view.png"},
+             {"id":"2", "img":"Air-Jordan-12-Retro-Dark-Grey-both-pairs.png"},
+             {"id":"3", "img":"Air-Jordan-12-Retro-Dark-Grey-facing-left.png"},
+             {"id":"4", "img":"Air-Jordan-12-Retro-Dark-Grey.jpg"}
+              
+           ],
+     "colors":[
+                {"id":"1","color":"black-and-red"},
+                {"id":"2", "color":"black-and-tile-green"}
+              ],
+      "sizes":[
+                { "id":"1","size":"8"},
+                { "id":"2","size":"8.5"},
+                { "id":"3","size":"9"},
+                { "id":"4","size":"9.5"}
+              ],
+       "sales": "FEB 18, 2018 15:37:25"
+      }
+    ]
+ }

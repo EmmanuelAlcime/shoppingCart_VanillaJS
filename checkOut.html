@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+ <html lang="en">
+       <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/font.css">
+        <link rel="stylesheet" href="css/site.css" media="all"/>
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+        <title>Jordans R US | Checkout</title>
+       
+    </head>
+       <body onload="javascript: shoppingCart._init();  _buildCartItems(); _fillCountryList(); checkCart(); ">
+        <noscript> <p>You need javascript enabled to view site</p></noscript>         
+            <nav class="navigation">
+              <div class="container">
+               <div class="logo" onclick="goHome()"><h1>Jordans R US</h1></div>
+                 <div class="pull-right" >
+                  <a href="index.html">Shop</a>
+                  <a href="checkOut.html">Check Out</a>
+                  <a href="cart.html" id="cartLink"><span id="cartItems"><span id="cart-count"></span><span class="shopping-cart"></span></span></span></a>
+                 </div><!-- pull right -->
+              </div>
+             </nav>
+              <div class="container down" >
+                <h1 id="paymentHeader">Express CheckOut <small>Please enter details below to complete purchase </small></h1></div>
+                
+              <div class="container down" id="wrapper">
+                <div id="paymentHolder">
+                         <h2> 1. Billing Address </h2>
+                         <form id="billing_info" onsubmit="return false;">
+                               <div id="firstName">
+                                  <label>First Name </label>
+                                  <input type="text" name="Fname" id="Fname" required></input>
+                               </div><!-- First Name -->
+
+                               <div id="lastName">
+                                  <label>Last Name</label>
+                                  <input type="text" name="Lname" id="Lname" required></input>
+                               </div><!-- Last Name -->
+                               <div id="email">
+                                    <label>Email</label>
+                                    <input type="email" name="email" required></input>
+                              </div><!-- email-->
+                              <div id="telephone">
+                                    <label>Telephone</label>
+                                    <input type="tel" name="telephone" required></input>
+                              </div><!-- email-->
+
+                              <div id="address">
+                                    <label>Address</label>
+                                    <input type="text" name="address_1" id="address_1" required></input>
+                                    <input type="text" name="address_2" id="address_2"></input>
+                              </div><!-- Address-->
+                              <div id="city">
+                                    <label>City</label>
+                                    <input type="text" name="city" id="cityInput" required></input>
+                              </div><!-- City -->
+                              
+                             
+                              <div id="State">
+                                    <label>State </label>
+                                    <select id="ST" name="state"></select>
+                              </div><!-- State_Territory -->
+
+                              <div id="Territory">
+                                    <label>Territory</label>
+                                    <select id="TR" name="territory"></select>
+                              </div><!-- State_Territory -->
+                               <div id="Department">
+                                    <label>Territory</label>
+                                    <select id="DP" name="department"></select>
+                              </div><!-- State_Territory -->
+                              <div id="Zip">
+                                    <label>Zip PostalCode</label>
+                                    <input type="text" name="PostalCode" id="PostalCode"/>
+                              </div><!-- zip -->
+
+                              <div id="country">
+                                    <label>Country</label>
+                                    <select id="countrySelect" onchange="_getStateOrProvince(this.value)"></select>
+                              </div><!-- country -->
+
+                               <button id="nextStep" onclick="nextStep();">Next</button>
+                         </form>
+                      
+                </div><!-- billing information -->
+  
+               <div id="cardInformation">
+                   <h2> 2. Shipping Method </h2>
+                    <div id="shippingOptions">
+                        <span>
+                         <p>We've notice that customers have been asked by customs to pay import duties or taxes when ordering from Jordan R US and selecting Express Shipping. </p>
+                         <p class="sOp">Please consider this when selecting your shipping options.</p>
+                    </span>
+                    <div id="shippingOptionsL">
+                       <form>
+                            <div>
+<input type="radio" name="regular" value="regular" id="regular" onclick="shipping(this.value);"></input>
+                              <label>Regular(1-6wks,no tracking) </label>
+                            </div>
+                            <div>
+<input type="radio" name="express" value="express" id="express" onclick="shipping(this.value);"></input>
+                                <label>Express(2-8days, tracking)</label>
+                            </div>
+                       </form>
+                    </div>
+                    </div>
+                    <div id="pay">
+                        <h2> 3. PAYMENT METHOD</h2>
+                         <form id="cardInfo">
+                              <div id="this_option">
+                                  <input type="radio" name="cardPayment"></input>
+                                  <label>pay with credit card</label>
+                              </div>
+                              <div id="cardType">
+                                  <label>Card Type</label>
+                                  <select>
+                                       <option>Visa Card</option>
+                                       <option>Master Card</option>
+                                  </select>
+                              </div>
+                              <div id="number">
+                                 <label>Card Number</label>
+                                 <input type="text" name="cardNumber"></input>
+                              </div>
+                              <div id="expiryDate">
+                                 <label>Expiration Date</label>
+                                 <select>
+                                    <optgroup>
+                                        <option value="JAN">JAN</option>
+                                        <option value="FEB">FEB</option>
+                                        <option value="MAR">MAR</option>
+                                        <option value="APRIL">APRIL</option>
+                                        <option value="MAY">MAY</option>
+                                        <option value="JUNE">JUNE</option>
+                                        <option value="JULY">JULY</option>
+                                        <option value="AUG">AUG</option>
+                                        <option value="SEP">SEP</option>
+                                        <option value="OCT">OCT</option>
+                                        <option value="NOV">NOV</option>
+                                        <option value="DEC">DEC</option>
+                                    </optgroup>
+                                 </select>
+                                 <select>
+                                    <optgroup>
+                                        <option value="2018">2018</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2025">2025</option>
+                                        <option value="2026">2026</option>
+                                        <option value="2027">2027</option>
+                                        <option value="2028">2028</option>
+                                        <option value="2029">2029</option>
+                                        <option value="2030">2030</option>
+                                    </optgroup>
+
+                                 </select>
+                              </div>
+                              <div id="cvc">
+                               <label>CVC</label>
+                              <input type="number" name="cvc" id="cvcNumber"></input>
+                              </div>
+                               <button id="secondStep" onclick="stepToCheckOut();">Next</button>
+                         </form>
+                       
+                    </div>
+               </div><!-- card information -->
+
+               <div id="insideCart">
+                   <h2> 4. Review Your Order </h2>
+                    <div id="carHold">
+                      <ul id="shopping"></ul>
+                    </div>
+                   <div id="total"></div>
+                   <div id="totalWithVat"></div>
+                   <div id="subTotal"></div>
+                   <button id="orderBtn" conclick="placeOrder();">PLACE ORDER</button>
+               </div><!-- cart information -->
+
+
+          </div><!-- container -->
+         <script type="text/javascript" src="js/checkOut.js"></script>
+         <script type="text/javascript" src="js/shoppingCart.js"></script>
+         <script type="text/javascript">
+            function goHome() {
+               window.location='index.html';
+            }
+
+            function checkCart(){
+              if(cartObj.length  === 0){
+                 window.location="index.html";
+              }
+            }
+           
+         </script>
+       </body>
+ </html>

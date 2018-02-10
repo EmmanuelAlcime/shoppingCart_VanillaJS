@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0">
+        <link rel="stylesheet" href="css/site.css" media="all"/>
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/font.css">
+    </head>
+       <body onload="javascript: var number = getId(); findItem(number); shoppingCart._init();  ">
+        <noscript> <p>You need javascript enabled to view site</p></noscript>         
+             <nav class="navigation">
+              <div class="container">
+               <div class="logo" onclick="goHome()"><h1>Jordans R US</h1></div>
+                 <div class="pull-right">
+                  <a href="index.html">Shop</a>
+                  <a href="checkOut.html">Check Out</a>
+                  <a href="cart.html" id="cartLink"><span id="cartItems"><span id="cart-count"></span><span class="shopping-cart"></span></span></span></a>
+                 </div><!-- pull right -->
+              </div>
+             </nav>
+              <div class="container down">
+                <div class="modal" id="Lmodal">
+                   <div class="modal-content">
+                      <div></div>
+                      <div>
+                           <h3>Successfully Added To Cart</h3>
+ 
+                      </div>
+                      <div>
+                         <button onclick="closeModal();">Continue Shopping</button>
+                         <button onclick="javascript: window.location='checkout.html'">Check Out</button>
+                     </div>
+                   </div><!-- modal content-->
+                </div>
+                    <div id="loading-holder"><img src="img/ajax-loader.gif"></div>
+                    <div class="showCase" id="hider">
+                         <div id="myItem"></div>
+                    </div>               
+          </div><!-- container -->
+         
+         <script type="text/javascript" src="js/shoppingCart.js"></script>
+         <script type="text/javascript" src="js/getItem.js"></script>
+         <script type="text/javascript">
+            function goHome() {
+               window.location='index.html';
+            }
+         </script>
+       </body>
+ </html>

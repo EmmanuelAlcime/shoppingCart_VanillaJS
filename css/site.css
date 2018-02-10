@@ -1,0 +1,911 @@
+    *{ padding:0;
+       margin:0;
+     }
+          body{ 
+            background:#fff;
+            font-family: 'GeosansLight';
+          }
+          img[src$=".jpg"], img[src$=".png"],img[src$=".gif"] {
+               image-rendering: crisp-edges; 
+           }
+         .navigation{
+             width:100%;
+             height:3em;
+            background: rgba(76,76,76,1);
+background: -moz-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(76,76,76,1)), color-stop(12%, rgba(89,89,89,1)), color-stop(25%, rgba(102,102,102,1)), color-stop(39%, rgba(71,71,71,1)), color-stop(50%, rgba(44,44,44,1)), color-stop(51%, rgba(0,0,0,1)), color-stop(60%, rgba(17,17,17,1)), color-stop(76%, rgba(43,43,43,1)), color-stop(91%, rgba(28,28,28,1)), color-stop(100%, rgba(19,19,19,1)));
+background: -webkit-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+background: -o-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+background: -ms-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+background: linear-gradient(to bottom, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
+             border-bottom:thin solid #222;
+          }
+
+          .navigation > div a {
+            width:100px;
+            height: 46.9px; 
+            float:left; 
+            line-height:43px; 
+            font-size:18px; 
+            text-align:center; 
+            color: #fff; 
+            font-family: 'GeosansLight';
+            font-weight:bold; 
+            text-decoration:none; 
+             display:block; 
+             border:thin solid #444; 
+           }
+
+          .pull-right{ width:27%; float:right;}
+           #cartItems{ float:right; width:25%; height:3em; display:block; position:relative;}
+           #cartItems > i { color:#FFF; font-size: 30px; position:absolute; top:10px; left: -35px; }
+           #cart-count { text-align:center; z-index:1; width: 16px; padding:2px; height:auto; color:#f08804; 
+                         border-radius:50px; -moz-border-radius:50px; -webkit-border-radius:50px; -ms-border-radius:50px; -o-border-radius:50px; 
+                         position:relative; left:-28px; top:-6px; 
+                         overflow:hidden;
+                        }
+
+           #cartLink{ 
+            width: 80px;
+            background:none; 
+            overflow:hidden; 
+            text-align:center;
+            border:none;
+           }
+           .shopping-cart{
+            display: block;
+            width: 38px;
+            height: 42px;
+            position:absolute;
+            top: 7px;
+            left:-43px;
+            background-image: url(../img/nav-sprite-global_bluebeacon-V3-1x_optimized._CB516556901_.png);
+            background-position: -8px -335px;
+            background-repeat: repeat-x;
+            }
+          .navigation > div a:hover{ background:#333;}
+          .logo{ width:30%; height:2.3em; float:left; margin-left:2%;}
+          .logo > h1 { color: #FFF; line-height: 48px;  font-family:'GeosansLight'; font-weight:300; cursor: pointer;}
+           
+          .container{
+               width:90%;
+               height:auto;
+               margin:0 auto;
+               position:relative;
+           }
+           #hider{ display:none;}
+           .modal{
+                 display:none;
+                 position:fixed;
+                 z-index: 1;
+                 padding-top:100;
+                 left:0;
+                 top:0;
+                 width:100%;
+                 height:100%;
+                 overflow:hidden;
+                 background: rgba(0,0,0,.8);
+                 transition: background ease-in 3s;
+          
+           }
+           
+
+           .modal-content {
+
+              position:relative;
+              background-color: #fefefe;
+              margin:auto;
+              padding:0;
+              top:100px;
+              width: 50%;
+              height: 20em;
+              z-index:1;
+              max-width:760px;
+           }
+          
+           #loading-holder{ 
+              width: 400px;
+              height: 3em; 
+              position:absolute; 
+              top:230px;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              margin: 0 auto;  
+              color:#181818;
+              text-align: center;
+              line-height: 80px;
+              font-size: 30px; 
+              font-weight: bold;
+            }
+           .showCase > h2{ margin-left: 2%; margin-top:2%; color:#444; font-size:20px; text-transform:uppercase; letter-spacing:2px; font-family:'GeosansLight';text-shadow: 0 1px 0 #ccc, 
+               0 2px 0 #c9c9c9,
+               0 3px 0 #bbb,
+               0 4px 0 #b9b9b9,
+               0 5px 0 #aaa,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15) !important; }
+           .showCase > h2:first-letter{ font-size:26px;}
+           ul.product-holder{ width:100%; height: auto; display:flex; display:-webkit-box; display:-moz-box; display: -webkit-flex; display:-ms-flex; list-style-type:none; margin-top:2%;  }
+   
+           ul.product-holder > li { width:30%; height:472; margin-left:2%; border:thin solid #eee; position:relative;  }
+           ul.product-holder > li:hover{ 
+                                        -webkit-box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
+box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
+                                         border:thin solid #eee; 
+                                         transition: box-shadow ease 0.3s;
+                                         transition: border ease 0.3s;
+                                         box-sizing: border-box;
+                                         -moz-box-sizing: border-box; 
+                                         -webkit-box-sizing: border-box;
+                                         -o-box-sizing: border-box;
+                                          -ms-box-sizing: border-box;
+                                           margin-top: -4px;
+                                         }
+               ul.product-holder > li:hover .shoe-price { position:absolute; left:-1px; bottom: -5px;}
+               ul.product-holder > li:hover .shoe-img{ 
+                width:80%; 
+                transition: width ease 0.4s; 
+                transition:padding ease 0.4s; 
+                padding:2px;
+                 }
+           ul.product-holder > li a{ text-decoration:none; }
+           .list-holder{ height: 9.9em; padding:0; position: relative; border-top: thin solid #eee;}
+           .items{ cursor:pointer; }
+           .shoe-img{ width:77%; height:9.5em; margin-left:22px; padding:3%; image-rendering: crisp-edges;
+                      box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box;}
+           .shoe-title{ font-size: 22px; font-weight:300; color:#333; text-transform:uppercase; margin-top:2%; margin-left:2%; font-family: 'GeosansLight';} 
+           .shoe-year{ display:block; margin-top:5%; color:#444; font-size:12px;margin-left:2%; letter-spacing:3px; font-family: 'GeosansLight';}
+           .shoe-price{ width: 40%;  
+                        height: 40px; 
+                        display:block; 
+                        text-align: center; 
+                        margin-top:4%;
+                        margin-bottom:0; 
+                       color:#FFF; 
+                       font-family: 'GeosansLight';
+                       line-height:38px; 
+                       background-color:green;
+                       font-size:16px;
+                       position:absolute; 
+                       bottom:0;
+                       transition: background-color ease 0.4s;
+                    }
+
+           #myItem{ display:flex;}
+           .image-holder{ width: 48%;}
+           .image-holder > img{ width: 50%; height:13em; margin-top:4%; margin-left:21%; }
+           .info-holder { width: 48%; height:455px; position:relative;  margin-left:2%;}
+           .item-title { font-size: 38px;  text-transform: uppercase; margin-top:10%; font-family: 'GeosansLight';} 
+           .item-price-holder { width:80%; display:flex; margin-top: 3%; margin-bottom: 5%; font-weight:bold; }
+           .item-price-holder > p { font-size: 24px; color:green; text-transform: uppercase; letter-spacing:3px;font-family: 'GeosansLight';}
+            #quantityCount{ margin-left: 2%; font-size:30px; font-style:italic; font-weight:bolder; color:red; line-height:24px;font-family: 'GeosansLight'; }
+            #quantityCount:before{ content:"-" margin-right:2px;}
+            #the-price{  margin-left: 3%; font-size:20px; line-height:24px;}
+            #warning{ 
+                      width: 70%; 
+                      border:thin solid red;  
+                      border-radius: 5px; 
+                      -moz-border-radius: 5px; 
+                      -ms-border-radius: 5px; 
+                      -webkit-border-radius: 5px;
+                      -o-border-radius: 5px; 
+                      color:red; font-size: 16px; 
+                      position:absolute; 
+                      bottom:0; 
+                      display:none;
+                      boz-sizing:border-box;
+                     -webkit-boz-sizing:border-box;
+                     -moz-boz-sizing:border-box;
+                     -ms-boz-sizing:border-box;
+                      -o-boz-sizing:border-box;
+                      padding:2%;
+                      background:#eee;
+                      font-family: 'GeosansLight';
+                     }
+           .btn{ 
+                width:30%; height:3em; 
+                color:#FFF; border:none;
+                border-radius:20px;  
+                background: rgba(252,234,187,1);
+                background: -moz-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
+                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(252,234,187,1)), color-stop(50%, rgba(252,205,77,1)), color-stop(51%, rgba(248,181,0,1)), color-stop(100%, rgba(251,223,147,1)));
+                background: -webkit-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
+                background: -o-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
+                background: -ms-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
+                -moz-border-radius:20px;
+                -webkit-border-radius:20px; 
+                -ms-border-radius:20px;
+                -o-border-radius:20px; 
+                margin-top: 6%;
+                cursor:pointer;
+                display:block;
+                position:absolute;
+                top:260px;
+                text-shadow:0 0 1px transparent;
+
+               }
+            .btn:hover{
+               color: #f1f1f1;
+               transition: color ease .3s; 
+               -moz-transition: color ease .3s; 
+               -webkit-transition: color ease .3s; 
+               -ms-transition: color ease .3s; 
+               -o-transition: color ease .3s; 
+             }
+            .bottom-div{ width:100%; height:9em; margin-top:2%;}
+            .shoe-views{
+            width:23%; height:8em; float:left; cursor:pointer;
+             image-rendering: crisp-edges;
+              border:thin solid #eee;
+              margin-left:1%;
+              padding:1%;
+              box-sizing:border-box;
+              -moz-box-sizing:border-box;
+              -webkit-box-sizing:border-box;
+              -ms-box-sizing:border-box;
+              -o-box-sizing:border-box;
+            }
+            .shoe-views:hover{ padding:1.5%; transition: padding ease 0.4s;}
+           .size-holder, .quantity-holder { width: 180px; display:block; float:left;}
+            .quantity-holder{ margin-left: 2%;}
+            .selec{ width:100%; height: 30px; background:#333;  color:#fff; padding: 5px 8px; border:none; -webkit-appearance:none;  }
+            .selec:focus {outline: none; background:#444;}
+
+             .itemTimer{ color: #808080; font-size: 12px; position:absolute; bottom: 10px; right:8px; font-family: 'GeosansLight';}
+             #wrapper { 
+                        display:flex; 
+                        display:-webkit-box; 
+                        display:-moz-box;
+                        display: -webkit-flex; 
+                        display:-ms-flex;
+                        height: 50em;
+             }
+             #paymentHeader{ display:block; width: 100%; margin-top:4%; margin-bottom:5%; color:#767676; font-weight:300; letter-spacing:2px;  text-transform:uppercase;}
+             #wrapper > div { flex: 1 100%; border-right:thin dotted #000; }
+             #wrapper div h2 *{ font-size: 18px; }
+             small{ font-size: 12px; color:#181818;  margin-left:0.5%;}
+             #paymentHolder{
+              margin-top:2%;
+              width: 30%;
+              height:100vh;
+              border-right:thin dotted #000;
+              padding:1%;
+             
+             }
+             #paymentHolder > h2:first-letter { font-size: 24px; color:red;}
+             #paymentHolder > h2 {  font-size:16px; }
+             input { width: 100%; height: 2em;padding: 2%; border:thin solid #eee; }
+
+              #firstName { width: 45%;}
+              #lastName  { width: 45%; margin-left:5%;}
+              #firstName , #lastName { display:inline; float:left;} 
+              #email { width: 45%;}
+              #telephone  { width: 45%; margin-left:5%;}
+              #email , #telephone { display:inline; float:left; margin-top: 4%; margin-bottom: 4%;} 
+              #paymentHolder > h2{ font-family: 'GeosansLight'; font-size: 16px; color:#181818; margin-bottom: 5%;}
+              #address{ width:93%;}
+              #address > input { width:100%; margin-top:4%;}
+              #city{ margin-top:3%;  margin-bottom: 6%; width:100%;}
+              #cityInput{ width:93%; }
+
+              #State{width: 45%; display:none; }
+              #Territory{width: 45%; display: none;}
+              #Department{width: 45%; display: none;}
+              #Zip{width: 45%; margin-left:5%;  display: none;}
+              #State, #Zip{ float:left; margin-bottom:4%;}
+              #Territory, #Zip{ float:left; margin-bottom:4%;}
+         
+              #State > select{ width:100%; height: 2.8em;}
+              #Territory > select{ width:100%; height: 2.8em;}
+              #Department > select{ width:100%; height: 2.8em;}
+              #country > label { width: 20%; margin-top:6%; margin-bottom:3%; display:block; text-align:left !important;}
+              #country{ width:100%; height: 2.8em; margin-top:10%; }
+              #countrySelect{ width:98% ; height: 2.8em;}
+              #checkBox{ margin-top: 4% !important; }
+              #cardInformation{
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                 padding:3%;
+              }
+             #cardInformation > h2:first-letter { font-size: 24px; color:red;}
+             #cardInformation > h2 {  font-family: 'GeosansLight'; font-size: 16px; margin-bottom:10%; }
+             #shippingOptions span p { color: red; font-size: 14px;}
+             #shippingOptions span p:nth-child(even){
+                margin-top:8%;
+                margin-bottom: 13%;
+             }
+            #shippingOptionsL{ margin-bottom: 10%;}
+            #shippingOptionsL  form div label { margin-left: 2%; position:relative; top: -10px; font-family: 'GeosansLight';}
+            #shippingOptionsL  form div input[type="radio"]{ width: 4%;}
+            #pay > h2:first-letter { font-size: 24px; color:red;}
+            #pay > h2{ margin-bottom:10%; font-size: 16px; font-family: 'GeosansLight';}
+            #pay form div label { margin-left: 2%; position:relative; top: -10px; font-family: 'GeosansLight';}
+            #pay form div input[type="radio"]{width: 4%;}
+            #this_option{ margin-bottom: 5%;}
+            #cardType{ width: 100%; margin-bottom: 8%; }
+            #cardType > label {}
+            #cardType > select{ width: 100%; height: 2.8em;}
+            #number { margin-bottom: 10%;}
+            #number > input { width: 100%; }
+            #expiryDate{ width: 100%; display:flex; }
+            #expiryDate label{ width: 100%; height:2.8em; display:block; clear:left; margin-bottom: 3%; }
+            #expiryDate select{ height:2.8em; flex-direction: row wrap; }
+            
+            #expiryDate select:nth-child(2n){
+              width: 35%;           
+             }
+
+             #expiryDate select:nth-child(2n+1){
+               width: 35%;
+               margin-left:5%;               
+             }
+
+            #cvc{ width: 100%; margin-top:5%; }
+            #cvc > label { display: block; }
+            #cvc > input{  width: 30%; margin-top: 0.3%; }
+           #insideCart{
+                 box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -ms-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                 padding:3%;
+            }
+            .inp{
+               margin-left: 7%;
+            }
+
+            .dec{
+                 height: 2.1em;
+                 margin-right: 5px !important;
+                 border-radius: 20% !important;
+                 -webkit-border-radius: 20% !important;
+                 -moz-border-radius: 20% !important;
+                 -ms-border-radius: 20% !important;
+                 -o-border-radius: 20% !important;
+              }
+            .inc{ 
+                   height: 2.1em;
+                    margin-left: 2px !important; 
+                    border-radius: 20% !important;
+                    -webkit-border-radius: 20% !important;
+                    -moz-border-radius: 20% !important;
+                    -ms-border-radius: 20% !important;
+                    -o-border-radius: 20% !important;
+                 }
+
+            #total{  display:flex; width: 100%; height: 3em; background: #eee; border-top: thick solid #000; border-bottom: thin  solid #000;  }
+            #total > div:nth-child(1){ width: 45%; }
+            #total > div:nth-child(1) p { line-height: 42px;font-family: 'GeosansLight'; font-weight: bolder; text-align: center; }
+            #total > div:nth-child(2){ width: 45%;}
+            #total > div:nth-child(2) p { line-height: 42px;font-family: 'GeosansLight'; font-weight: bolder; text-align:right; }
+            #subTotal{ display:flex; width: 100%; height: 3em; background: #eee;border-top: thin  solid #000; border-bottom: thick solid #000; margin-bottom: 3%; }
+            #subTotal > div:nth-child(1) { width: 45%; }
+            #subTotal > div:nth-child(1) p {  line-height: 42px; font-weight: bolder; text-align: center;}
+            #subTotal > div:nth-child(2) { width: 45%; }
+            #subTotal > div:nth-child(2) p {  line-height: 42px; font-weight: bolder; text-align:right; }
+            #totalWithVat{ display:flex; width: 100%; height: 3em; background: #eee;}
+            #totalWithVat > div:nth-child(1){ width: 45%; }
+            #totalWithVat > div:nth-child(1) p { line-height: 42px; font-family: 'GeosansLight'; font-size:12px;  font-weight: bolder; text-align: center; }
+            #totalWithVat > div:nth-child(2){ width: 45%; }
+            #totalWithVat > div:nth-child(2) p { line-height: 42px; font-weight: bolder;  font-weight: bolder; ;text-align:right; }
+           #insideCart > h2:first-letter { font-size: 24px; color:red;}
+           #insideCart > h2{ margin-bottom:10%; font-size: 16px;}
+           #orderBtn{ width:100%; height: 3.5em; border:none; -webkit-apperence:none; background: red; color:#fff; font-size: 16px; cursor:pointer;}
+           #nextStep{ display:none; }
+           #myCart{ width: 500px; height: auto;  margin-top: 6%;}
+           #cartItemsHolder{width: 100%; display: flex; flex-direction: column;}
+           .cartItems{ display:  flex; flex-direction: row; border-bottom: thin solid #eee;}
+           #itemImg{ width: 40%; }
+           #itemImg > img { width: 76%; }
+           img.checkOutImg{ width: 92%;  margin-top: 16%;}
+           ._sizeHolder { display:block; width: 30%; height: 2em; background: rgba(0,0,0, .5); }
+           ._sizeHolder > p{ margin-left: 2%; color: #FFF; line-height: 28px; font-size: 20px; font-weight: bold; }
+           #itemINFO{ width: 40%;  margin-left: 10%; height: 10em;}
+           .iImg{height: 8em;}
+           .iINFO{height: 8em;}
+            #secondStep{display: none;}
+           .h1Holder {margin-top: 5%; margin-bottom: 10%;font-family: 'GeosansLight';  text-transform:uppercase;  letter-spacing:2px; display: block;}
+           #sName{font-size: 14px !important;}
+           .spanPrice { display: block; width: 100%; height: 3em; margin-top: 5%; margin-bottom: 5%; }
+           .spanPrice > p:before{ content: "price:"; margin-right:2%;font-family: 'GeosansLight'; }
+           .spanPrice > p{ font-weight: bold; line-height: 40px; }
+           #totalHolder{ width: 100%; height: 3em; display: flex; flex-direction: row; background: #eee; }
+           #totalHolder :nth-child(1){ line-height: 42px; text-align: center; font-weight: bold; font-family: 'GeosansLight'; font-size: 20px; color:green; border-right:thin solid #ccc;}
+           .quantityHolder {width: 100%; display: flex; flex-direction: row; margin-top: 5%; margin-bottom: 5%;}
+           .quantityHolder > input{ width: 30%;   margin-right: 4%; text-align: center;}
+           .input-group-button { width: 20%;  }
+           .input-group-button > button { 
+                -webkit-appearance:none;
+                appearance:none;
+                border: none;
+                border-radius: 20%;
+                height: 2.2em;
+                padding: 0.25em 0.8em;
+                font-family: 'GeosansLight';
+                cursor: pointer;
+            }
+            .input-group-button > button:hover{ background-color: #ccc; }
+           #totalHolder :nth-child(2):before{ content: "$"; }
+           #totalHolder :nth-child(2){ line-height: 42px; text-align: center; font-weight: bold; font-family: 'GeosansLight'; font-size: 18px; color:green;}
+           #totalHolder > *{ flex: 1 1 100%; font-family: 'GeosansLight';}
+           .buttonHolder{display: block; width: 100%; height: 3em; }
+           .buttonHolder > button{ 
+            width: 30%; 
+            height: 2.5em; 
+            background:none;
+             color:#444;
+             font-size: 20px; 
+             -webkit-appearance:none;
+              appearance:none; 
+              border:none; 
+              cursor: pointer; 
+              float: right;
+             border-radius: 5%;
+             -moz-border-radius: 5%;
+             -webkit-border-radius: 5%;
+             -ms-border-radius: 5%;
+             -o-border-radius: 5%;
+             padding: 2%;
+             line-height: 20px;
+             position: relative;
+             top:-65px;
+             left:-37px;
+           }
+           ._i23_remove{ width: 80px !important;  
+                         padding: 1%;
+                        font-size:22px !important; 
+                        background: none !important; 
+                        color: red !important;
+                        position: relative;
+                        top:-67px !important;
+                        left: 16px !important;
+            }
+           
+
+           .no-items{
+              width: 400px;
+              height: 3em;
+              position:absolute; 
+              top:180px;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              margin: 0 auto;  
+              color:#181818;
+              text-align: center;
+              line-height: 80px;
+              font-size: 30px; 
+              font-weight: bold;
+            }
+           #lastDiv{ width: 100%; height: 6em; margin-top: 8%;}
+           #lastDiv > button:nth-child(1){ width: 30%; height: 4em; background: red; font-family: 'GeosansLight';color: #fff; font-weight: bold; border: none; cursor: pointer;}
+           #lastDiv > button:nth-child(2){ width: 30%; height: 4em; background: green;font-family: 'GeosansLight'; color: #fff; font-weight: bold; border: none; float:right; cursor: pointer;}
+/***    mobile screens like androids and  iphones ****/
+ @media (min-width:264px) and (max-width: 550px){
+             .navigation{
+             width:100%;
+             height:3em;
+             transition: width ease 04s;
+             background:linear-gradient(to bottom, #181818,#555);
+             border-bottom:thin solid #222;
+          }
+          .navigation > div a {width: 32%; height:46.9px; float:left; line-height:40px; text-align:center; color: #fff;font-size:13px; font-weight:bold; text-decoration:none;  display:block; border:thin solid #444; 
+            
+           }
+          .navigation > div a:hover{ background:#333;}
+          .navigation .container{ width:100%;}
+          .pull-right{width: 65%;}
+
+           #cartItems{ float:right; width:100%; height:3em; display:block;}
+           #cartItems > i { color:#FFF; font-size: 25px; position:absolute; top:8px; left: 10px; }
+           #cart-count { text-align:center; z-index:1; width: 18px; padding:2px; height:auto;  
+                         border-radius:50px; -moz-border-radius:50px; -webkit-border-radius:50px; -ms-border-radius:50px; -o-border-radius:50px; 
+                         color:#f08804;
+                         display:none;
+                         position:relative; left:32px; top:-6px;
+                   }
+            .shopping-cart{
+            display: block;
+            width: 38px;
+            height: 40px;
+            position:absolute;
+            top: 7px;
+            left:18px;
+            background-image: url(../img/nav-sprite-global_bluebeacon-V3-1x_optimized._CB516556901_.png);
+            background-position: -8px -335px;
+            background-repeat: repeat-x;
+            }       
+
+           #cartLink{ width:33%; background:none; overflow:hidden; text-align:center; border:none;}
+          .logo{ width: 28%; height:2.3em; float:left;}
+          .logo > h1 { color:#FFF; line-height: 44px;  text-align:center; font-size: 16px; font-weight:600;}
+           ul.product-holder {  flex-flow: column wrap; justify-content: space-around;}
+           ul.product-holder > li { width:97%; margin-left:0; margin-right:0; margin-top:5%; transition: position ease 04s;}
+            #loading-holder{ 
+              position:absolute; 
+              width: 400px;
+              height: 3em; 
+              position:absolute; 
+              top:180px;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              margin: 0 auto;  
+              color:#181818;
+              text-align: center;
+              line-height: 80px;
+              font-size: 30px; 
+              font-weight: bold;
+          }
+           .no-items{
+              width: 400px;
+              height: 3em; 
+              position:absolute; 
+              top:180px;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              margin: 0 auto;  
+              color:#181818;
+              text-align: center;
+              line-height: 80px;
+              font-size: 30px; 
+              font-weight: bold;
+            }
+            .shoe-img{ width:96%; 
+                       height:13.5em; 
+                       margin-left:2%; 
+                       padding:3%; image-rendering: crisp-edges;
+                      box-sizing:border-box; 
+                     -moz-box-sizing:border-box; 
+                    -webkit-box-sizing:border-box; 
+                    -ms-box-sizing:border-box; -o-box-sizing:border-box;}
+
+
+             
+           #myItem{ display:flex; flex-direction: column;}
+           #myCart {
+              width: 100%;
+              height: auto;
+             margin-top: 6%;
+           }
+           #cartItemsHolder {
+                 width: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  margin-bottom: 5%;
+              }
+
+           .cartItems{width: 100%; display: flex;  flex-direction:column;}
+           #itemImg {
+                    width: 100%;
+           }
+            #itemImg > img {
+               width: 40%;
+               margin-left: 4%;
+            }
+
+           #itemINFO {
+                      width: 100%;
+                      border-top: thin solid #eee;
+                      margin-left: 0;
+                      
+            }
+            .h1Holder {
+                 margin-top: 3%;
+                 margin-bottom: 3%;
+                 
+                 font-family: 'GeosansLight';
+                 text-transform: uppercase;
+                 letter-spacing: 2px;
+                 display: block;
+             }
+            .quantityHolder {
+                       width: 100%;
+                       display: flex;
+                       flex-direction: row;
+                       margin-top: 5%;
+                       margin-bottom: 5%;
+              }
+              .quantityHolder > input {
+                      width: 10%;
+                       margin-right: 2%;
+                      text-align: center;
+               }
+               .buttonHolder {
+                    display: block;
+                   width: 30%;
+                  height: 3em;
+                  margin-top: 6%;
+                  margin-left: 15%;
+                  float: left;
+                }
+                .buttonHolder > button {width: 100%; line-height: 30px; position: relative; top:-10px; left: 64px;}
+              .input-group-button {
+                   width: 12%;
+              }
+
+              .spanPrice {
+                display: block;
+               width: 45%;
+               height: 3em;
+                margin-top: 5%;
+               margin-bottom: 5%;
+               float: left;
+           }
+              #totalHolder {
+                 width: 100%;
+                height: 3em;
+                 display: flex;
+                flex-direction: row;
+               background: #eee;
+            }
+            #totalHolder :nth-child(1) {
+
+                line-height: 42px;
+                text-align: center;
+                font-weight: bold;
+                font-family: 'GeosansLight';
+                font-size: 20px;
+                color: green;
+                border-right: thin solid #ccc;
+               }
+               #lastDiv {
+                   width: 100%;
+                   height: 6em;
+                   margin-top: 8%;
+               }
+
+           .image-holder{ width: 100%;}
+           .image-holder > img{ width: 88%; height:16em; margin-top:4%; margin-left:6%; }
+           .info-holder { width: 100%; height:45S0px; position:relative; margin-left:0.5%;  margin-bottom: 20px;}
+           .item-title { font-size: 22px;  text-transform: uppercase; margin-top:4%; margin-bottom:7%; font-family: 'GeosansLight';} 
+           .item-price-holder { width:100%; display:flex; margin-top: 3%; margin-bottom: 6%; font-weight:bold; }
+           .item-price-holder > p { font-size: 14px; color:green; text-transform: uppercase; letter-spacing:3px;font-family: 'GeosansLight';}
+            #quantityCount{ margin-left: 2%; font-size:20px; font-style:italic; font-weight:bolder; color:red; line-height:12px; font-family: 'GeosansLight'; }
+            #the-price{  margin-left: 2%; font-size:20px; line-height:12px;}
+            #warning{ 
+                      width: 97%; 
+                      border:thin solid red;  
+                      border-radius: 5px; 
+                      -moz-border-radius: 5px; 
+                      -ms-border-radius: 5px; 
+                      -webkit-border-radius: 5px;
+                      -o-border-radius: 5px; 
+                      color:red; font-size: 16px; 
+                      position:absolute; 
+                      bottom: 3px; 
+                      
+                      display:none;
+                      boz-sizing:border-box;
+                     -webkit-boz-sizing:border-box;
+                     -moz-boz-sizing:border-box;
+                     -ms-boz-sizing:border-box;
+                      -o-boz-sizing:border-box;
+                      padding:3%;
+                      background:#eee;
+                      font-family: 'GeosansLight';
+                     }
+           .modal-content {
+              position:relative;
+              background-color: #fefefe;
+              margin: 0 auto;
+              padding:0;
+              top:50px;
+              width: 90%;
+              height: 20em;
+              z-index:1;
+              max-width:760px;
+           }
+
+           .btn{ 
+                width:90%; 
+                height:3.5em; 
+                color:#FFF; border:none;
+                border-radius:20px;  
+                background: rgba(252,234,187,1);
+                background: -moz-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
+                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(252,234,187,1)), color-stop(50%, rgba(252,205,77,1)), color-stop(51%, rgba(248,181,0,1)), color-stop(100%, rgba(251,223,147,1)));
+                background: -webkit-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
+                background: -o-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
+                background: -ms-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
+                -moz-border-radius:20px;
+                -webkit-border-radius:20px; 
+                -ms-border-radius:20px;
+                -o-border-radius:20px; 
+                margin-top: 6%;
+                margin-bottom: 6%;
+                cursor:pointer;
+                display:block;
+                position:absolute;
+                top:280px;
+                left: 16px;
+                text-shadow:0 0 1px transparent;
+
+               }
+            .bottom-div{ width:100%; height:9em; margin-top:2%;}
+            .shoe-views{
+            width:24%; height:8em; float:left; cursor:pointer;
+             image-rendering: crisp-edges;
+              border:thin solid #eee;
+              margin-left:1%;
+              padding:1%;
+              box-sizing:border-box;
+              -moz-box-sizing:border-box;
+              -webkit-box-sizing:border-box;
+              -ms-box-sizing:border-box;
+              -o-box-sizing:border-box;
+            }
+            .shoe-views:hover{ padding:1.5%; transition: padding ease 0.4s;}
+            .size-holder{ width: 100%;  margin-bottom:10%;}
+           
+            .size-holder, .quantity-holder { width:100%; display:block;}
+            .quantity-holder{ margin-left:0; }
+            .selec{ width:100%; height: 30px; background:#333;  color:#fff; padding: 5px 8px; border:none; -webkit-appearance:none;  }
+            .selec:focus {outline: none; background:#444;}
+            #paymentHolder{ border:none !important;}
+            #cardInformation{
+               display:none;
+               border-right: none !important;
+             }
+
+            #insideCart{
+                display:none;
+             }
+
+#nextStep{
+             display:block;
+             width:100%;
+             height:4em;
+             border:none;
+             color: #333;
+             border:thin solid #444;
+             -webkit-appearance:none;
+             border:thin solid #ccc;
+             background:#eee;
+             position:absolute;
+             bottom:50px;
+             left:0;
+             font-weight:bold;
+             cursor:pointer;
+             
+           }
+  #secondStep,#nextStep:hover{ background-color: #eee; }         
+
+#secondStep{
+
+             display:block;
+             width:100%;
+             height:4em;
+             border:none;
+             color: #333;
+             border:thin solid #444;
+             -webkit-appearance:none;
+             border:thin solid #ccc;
+             background:#eee;
+             position:absolute;
+             bottom:-80px;
+             left:0;
+             font-weight:bold;
+             cursor:pointer;
+}
+
+
+           }
+            @media (min-width: 551px) and (max-width: 614px){
+          .navigation > div a {
+            width:90px;
+            height: 46.9px; 
+            float:left; 
+            line-height:43px; 
+            font-size:18px; 
+            text-align:center; 
+            color: #fff; 
+            font-family: 'GeosansLight';
+            font-weight:bold; 
+            text-decoration:none; 
+             display:block; 
+             border:thin solid #444; 
+           }
+
+           #cartItems{ float:right; width:100%; height:3em; display:block;}
+           #cartItems > i { color:#FFF; font-size: 25px; position:absolute; top:8px; left: 10px; }
+           #cart-count { text-align:center; z-index:1; width: 18px; padding:2px; height:auto;  
+                         border-radius:50px; -moz-border-radius:50px; -webkit-border-radius:50px; -ms-border-radius:50px; -o-border-radius:50px; 
+                         color:green;
+                         display:none;
+                         position:relative; left:32px; top:-6px;
+                   }
+
+            .shopping-cart{
+            display: block;
+            width: 38px;
+            height: 40px;
+            position:absolute;
+            top: 7px;
+            left:18px;
+            background-image: url(../img/nav-sprite-global_bluebeacon-V3-1x_optimized._CB516556901_.png);
+            background-position: -8px -335px;
+            background-repeat: repeat-x;
+            }       
+
+           #cartLink{ width:80px; background:none; overflow:hidden; text-align:center; border:none;}
+            #loading-holder{ 
+             width: 400px;
+              height: 3em; 
+              position:absolute; 
+              top:230px;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              margin: 0 auto;  
+              color:#181818;
+              text-align: center;
+              line-height: 80px;
+              font-size: 30px; 
+              font-weight: bold;}
+            }
+           
+           /***    Tablet size screens  ****/
+           @media (min-width: 540px) and (max-width: 1150px){
+            .pull-right{width: 49%;}
+            #loading-holder{ 
+              width: 400px;
+              height: 3em;
+              position:absolute; 
+              top:180px;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              margin: 0 auto;  
+              color:#181818;
+              text-align: center;
+              line-height: 80px;
+              font-size: 30px; 
+              font-weight: bold;
+            }
+            #cartItems{ float:right; width:100%; height:3em;  display:block;}
+            #cart-count {  color:#f08804; }
+           .logo{ width:35%; height:2.3em; float:left;}
+           li.items{ width: 100%;}
+           ul.product-holder {  display:flex;  flex-wrap: wrap;}
+           ul.product-holder > li { flex:1 40%; margin-top:10px; transition: position ease 04s;}
+           #myItem { width:100%; display: flex;}
+           .image-holder{ width: 70%; }
+           .info-holder{ width: 37%;  }
+           .item-title {
+                 font-size: 27px;
+                 text-transform: uppercase;
+                 margin-top: 10%;
+                 margin-bottom: 13%;
+                  font-family: 'GeosansLight';
+             }
+
+             .btn {
+                   width: 100%;
+                   height: 3em;
+             }
+             #selec {
+                width: 100%;
+                height: 30px;
+                background: #333;
+                color: #fff;
+                padding: 5px 8px;
+                border: none;
+               -webkit-appearance: none;
+               margin-left: 2.7%;
+               margin-bottom: 8%;
+               
+
+             }
+           }

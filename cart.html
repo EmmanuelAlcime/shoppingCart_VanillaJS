@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=0">
+        <link rel="stylesheet" href="css/site.css" media="all"/>
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/font.css">
+        <title>Jordans R US | Cart</title>
+    </head>
+       <body onload="javascript:shoppingCart._init();  showLoader(); cart._buildCartItems();"> 
+        <noscript> <p>You need javascript enabled to view site</p></noscript>        
+             <nav class="navigation">
+              <div class="container">
+               <div class="logo" onclick="goHome()"><h1>Jordans R US</h1></div>
+                 <div class="pull-right">
+                  <a href="index.html">Shop</a>
+                  <a href="checkOut.html">Check Out</a>
+                  <a href="cart.html" id="cartLink"><span id="cartItems"><span id="cart-count"></span><span class="shopping-cart"></span></span></span></a>
+                 </div><!-- pull right -->
+              </div>
+             </nav>
+              <div class="container down">
+                    <div id="loading-holder"><img src="img/ajax-loader.gif"></div>
+                    <div class="showCase" id="hider">
+                         <div id="myCart"></div>
+                    </div>               
+          </div><!-- container -->
+         <script type="text/javascript" src="js/cart.js"></script>
+         <script type="text/javascript" src="js/shoppingCart.js"></script>
+         <script type="text/javascript">
+            function goHome() {
+               window.location='index.html';
+            }
+
+         </script>
+       </body>
+ </html>

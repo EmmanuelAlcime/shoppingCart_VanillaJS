@@ -1,0 +1,12 @@
+[
+  {"name":"Nord-Ouest","code":"NO"},
+  {"name":"Nord","code":"N"},
+  {"name":"Nord-Est","code":"NE"},
+  {"name":"Artibonite","code":"A"},
+  {"name":"Centre","code":"C"},
+  {"name":"Ouest","code":"O"},
+  {"name":"Sud-Est","code":"SE"},
+  {"name":"Sud","code":"S"},
+  {"name":"Nippes","code":"N"},
+  {"name":"Grande-Anse","code":"GA"}
+]
