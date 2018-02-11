@@ -94,15 +94,16 @@
                          <p class="sOp">Please consider this when selecting your shipping options.</p>
                     </span>
                     <div id="shippingOptionsL">
-                       <form>
+                       <form name="shippingOptions" novalidate>
                             <div>
-<input type="radio" name="regular" value="regular" id="regular" onclick="shipping(this.value);"></input>
-                              <label>Regular(1-6wks,no tracking) </label>
+<input type="radio" name="shipping" value="regular" id="regular"></input>
+                              <label>Regular(1 - 6wks, no tracking) </label>
                             </div>
                             <div>
-<input type="radio" name="express" value="express" id="express" onclick="shipping(this.value);"></input>
-                                <label>Express(2-8days, tracking)</label>
+<input type="radio" name="shipping" value="express" id="express" ></input>
+                                <label>Express(2 - 8days, tracking)</label>
                             </div>
+                            <div id="shippingCost"></div><!-- shipping Cost-->
                        </form>
                     </div>
                     </div>
@@ -116,8 +117,8 @@
                               <div id="cardType">
                                   <label>Card Type</label>
                                   <select>
-                                       <option>Visa Card</option>
-                                       <option>Master Card</option>
+                                       <option name='cardChoice'>Visa Card</option>
+                                       <option name='cardChoice'>Master Card</option>
                                   </select>
                               </div>
                               <div id="number">

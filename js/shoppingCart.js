@@ -92,15 +92,15 @@ shoppingCart = {
               setTimeout(function(){  message.style.display = "none";}, 3000); 
            return  false;
           }
-          if(cartObj.length  < 0 || cartObj.length > 0){
+        }
+     }
+    if(cartObj[0] == null || cartObj.length  > -1){
               var message = document.getElementById("warning");
               message.style.display = "block";
               message.style.border ="thin solid green";
               message.innerHTML = "Item Added to Cart";
               setTimeout(function(){  message.style.display = "none";}, 3000);
-          } 
-        }
-     }
+    } 
      cartObj[cartCI++] = newRow;
      this._setLocalData('NETSHOPCART_USERCART', JSON.stringify(cartObj));
      this._setLocalData('NETSHOPCART_USERCART_CI', cartCI);
@@ -124,32 +124,32 @@ shoppingCart = {
 
 
 
- _calculateShipping: function(qty){
-
+ _calculateShipping: function(type, qty){
    var shipping = 0;
-
-
+   var speedPrice;
+   
+   if (type=="regular") {
+      speedPrice = 3.00;
+   }
+   else if(type=="express"){
+      speedPrice = 7.00; 
+   }
 
    if(qty >= 2){
-
      shipping = 6;
-
    }
 
    if(qty >= 3 && qty <= 6){
-
        shipping = 8;
-
     }
 
     if(qty >=7 && qty <= 10){
-
         shipping = 16;
-
     }
-
-    return shipping;
-
+    if (qty > 10) {
+      shipping = 26;
+    }
+    return shipping + speedPrice;
   },
 
 

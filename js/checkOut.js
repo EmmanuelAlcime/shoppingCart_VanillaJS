@@ -11,6 +11,18 @@ var quantity = document.getElementsByClassName("quantityHolder");
 var buttons = document.getElementsByClassName("buttonHolder");
 
 
+
+var shippingCost = document.getElementById("shippingCost");
+var shippingOpts = document.forms['shippingOptions'];
+for (var i = 0; i < shippingOpts.length; i++) {
+  shippingOpts[i].addEventListener('click',(e)=>{
+        // find all quanties
+        var oG = shoppingCart._calculateShipping(e.target.value,10);
+        shippingCost.innerHTML= "<p class='backP'>cost of shipping is: $"+oG+"</p>";
+    });
+  }
+}
+
 function _fillCountryList(){
      var _places = document.getElementById("countrySelect");
      var _countryList = 'countryList.json';
@@ -95,14 +107,6 @@ function _callForST(SorT){
   }
 }
 
-function _animateLeft(element){
-    var _div = document.getElementById("'"+element+"'");
-    var pos = 0;
-    var id = setInterval(frame, 3000);
-    var frame = function(){
-      
-  };
-}
 
 
 
@@ -225,9 +229,7 @@ function _buildCartItems (){
        }
        init();
    }
-    function shipping(val){
-      console.log(val);
-    }
+    
 
     function createBindings(quantityContainer,cartitems,buttonContainer){
     var quantityAmount  = quantityContainer.getElementsByClassName("quanCount")[0];
