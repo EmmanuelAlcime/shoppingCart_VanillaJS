@@ -298,7 +298,11 @@ function _buildCartItems (){
    function decreaseValue(event, quantityAmount, item){
     value = parseInt(quantityAmount.value, 10);
     value = isNaN(value) ? 0 : value;
-    if(value > 0) value--;
+    if(value <= 1){
+       value = 1;
+    }
+    else if(value > 0){
+    value--;
     item.qty = value;
     console.log(item);
     const total = shoppingCart._subTotal();
@@ -309,4 +313,5 @@ function _buildCartItems (){
     // update memory
     shoppingCart._setLocalData("NETSHOPCART_USERCART", JSON.stringify(cartObj));
     return total.noVAT;
+    }
   }
