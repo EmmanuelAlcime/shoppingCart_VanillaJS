@@ -22,7 +22,7 @@ var renderCountry = function(rest){
           id: "countryHolder",
           width: "100%",
           height: "3em",
-          innerHTML: "<img src='img/"+rest.country_code+".png'><p>  yes we ship to "+rest.country_name+"</p>"
+          innerHTML: "<img src='img/"+rest.country_code.toLowerCase()+".png'><p>  yes we ship to "+rest.country_name+"</p>"
      }));
 };
 freeIpGEO.getGEO();
