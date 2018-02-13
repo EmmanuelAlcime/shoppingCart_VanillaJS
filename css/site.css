@@ -740,7 +740,7 @@ box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
                 cursor:pointer;
                 display:block;
                 position:absolute;
-                top:280px;
+                top:314px;
                 left: 16px;
                 text-shadow:0 0 1px transparent;
 
@@ -810,11 +810,13 @@ box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
              left:0;
              font-weight:bold;
              cursor:pointer;
-}
-
-
-           }
-            @media (min-width: 551px) and (max-width: 614px){
+   }
+        #warning{
+              width: 90%;
+              bottom: -40px;
+             }
+}/* end */
+@media (min-width: 551px) and (max-width: 800px){
           .navigation > div a {
             width:90px;
             height: 46.9px; 
@@ -865,12 +867,16 @@ box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
               text-align: center;
               line-height: 80px;
               font-size: 30px; 
-              font-weight: bold;}
-            }
-           
-           /***    Tablet size screens  ****/
-           @media (min-width: 540px) and (max-width: 1150px){
-            .pull-right{width: 49%;}
+              font-weight: bold;
+      }
+      #myItems{ flex-direction: column; }
+      #cardInformation{ display: none; }
+      #insideCart{display: none;}
+    }
+
+ /***    Tablet size screens  ****/
+           @media (min-width: 530px) and (max-width: 1150px){
+            .pull-right{width: 53%;}
             #loading-holder{ 
               width: 400px;
               height: 3em;
@@ -892,9 +898,9 @@ box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
            li.items{ width: 100%;}
            ul.product-holder {  display:flex;  flex-wrap: wrap;}
            ul.product-holder > li { flex:1 40%; margin-top:10px; transition: position ease 04s;}
-           #myItem { width:100%; display: flex;}
-           .image-holder{ width: 70%; }
-           .info-holder{ width: 37%;  }
+           #myItem { width:100%; display: flex; flex-direction: column;}
+           .image-holder{ width: 100%; }
+           .info-holder{ width: 100%;  margin-left: 0; }
            .item-title {
                  font-size: 27px;
                  text-transform: uppercase;
@@ -902,10 +908,20 @@ box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
                  margin-bottom: 13%;
                   font-family: 'GeosansLight';
              }
+             .size-holder, .quantity-holder {
+                 width: 48%;
+                 display: block;
+                 float: left;
+              }
+              .quantity-holder {
+                 width: 48%;
+                 margin-left: 2%;
+               }
 
              .btn {
                    width: 100%;
                    height: 3em;
+                   margin-top: 20%;
              }
              #selec {
                 width: 100%;
@@ -920,4 +936,13 @@ box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
                
 
              }
-           }
+             #warning{
+              width: 98%;
+             bottom: -40px;
+             }
+             #cardInformation{ display: none; }
+             #insideCart{display: none;}
+           }    
+
+    
+          
