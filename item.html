@@ -21,27 +21,16 @@
               </div>
              </nav>
               <div class="container down">
-                <div class="modal" id="Lmodal">
-                   <div class="modal-content">
-                      <div></div>
-                      <div>
-                           <h3>Successfully Added To Cart</h3>
- 
-                      </div>
-                      <div>
-                         <button onclick="closeModal();">Continue Shopping</button>
-                         <button onclick="javascript: window.location='checkout.html'">Check Out</button>
-                     </div>
-                   </div><!-- modal content-->
-                </div>
                     <div id="loading-holder"><img src="img/ajax-loader.gif"></div>
                     <div class="showCase" id="hider">
                          <div id="myItem"></div>
-                    </div>               
+                         <div id="pla"></div><!-- ship to this counry -->        
+                    </div>                  
           </div><!-- container -->
          
          <script type="text/javascript" src="js/shoppingCart.js"></script>
          <script type="text/javascript" src="js/getItem.js"></script>
+         <script type="text/javascript" src="js/freeUserLoc.js"></script>
          <script type="text/javascript">
             function goHome() {
                window.location='index.html';
