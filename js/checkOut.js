@@ -12,16 +12,25 @@ var buttons = document.getElementsByClassName("buttonHolder");
 
 
 
+var _getQuantity = function(){
+  if(localStorage){ 
+    var _qK = JSON.parse(localStorage.getItem('NETSHOPCART_USERCART'));
+    for (var j = 0; j < _qK.length; j++) {
+         return _qK[j].qty;
+    }
+  }
+}
 var shippingCost = document.getElementById("shippingCost");
 var shippingOpts = document.forms['shippingOptions'];
 for (var i = 0; i < shippingOpts.length; i++) {
+
   shippingOpts[i].addEventListener('click',(e)=>{
-        // find all quanties
-        var oG = shoppingCart._calculateShipping(e.target.value,10);
-        shippingCost.innerHTML= "<p class='backP'>cost of shipping is: $"+oG+"</p>";
+  var quanCount = parseInt(_getQuantity());
+  var oG = shoppingCart._calculateShipping(e.target.value,quanCount);
+  shippingCost.innerHTML= "<p class='backP'>cost of shipping is: $"+oG+"</p>";
     });
   }
-}
+
 
 function _fillCountryList(){
      var _places = document.getElementById("countrySelect");
@@ -266,11 +275,11 @@ function _buildCartItems (){
        }
     });
 
-    increase.addEventListener('click', function(e){
+    increase.addEventListener('click',(e)=>{
          increaseValue(e, quantityAmount, item);
     });
 
-    decrease.addEventListener('click',function(e){
+    decrease.addEventListener('click',(e)=>{
          decreaseValue(e,  quantityAmount, item);
     });
   }
