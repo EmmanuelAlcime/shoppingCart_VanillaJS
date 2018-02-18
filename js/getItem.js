@@ -128,6 +128,11 @@ function getCurrentPrice(price){
        Price.setAttribute("id","the-price");
        Price.appendChild(document.createTextNode("$"+price));
        span1.appendChild(Price);
+       var shipC = Object.assign(document.createElement("span"),{
+         id:'shippingFree',
+         innerHTML:'Free Shipping'
+       });  
+       div2.appendChild(shipC);
        var span2 = document.createElement("span");
        span2.setAttribute("class","size-holder");
        var description = document.createElement("p");
