@@ -119,18 +119,33 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', end
               font-size: 30px; 
               font-weight: bold;
             }
+            #shippingFree{
+              display: block;
+              font-weight: bold;
+              text-transform: uppercase;
+              font-size: 20px;
+              margin-bottom: 5%;
+            }
+            #back_to_search {
+             padding: 10px 20px 20px;
+             border-bottom: 1px solid #ccc;
+             height: 14px;
+            }
+            #back_to_search > a{ text-decoration: none;  color:#333;  line-height: -50px !important; display: block;}
+            #back_to_search a > i { font-size: 24px; margin-right: 1%;}
+
            .showCase > h2{ margin-left: 2%; margin-top:2%; color:#444; font-size:20px; text-transform:uppercase; letter-spacing:2px; font-family:'GeosansLight';text-shadow: 0 1px 0 #ccc, 
-               0 2px 0 #c9c9c9,
-               0 3px 0 #bbb,
-               0 4px 0 #b9b9b9,
-               0 5px 0 #aaa,
-               0 6px 1px rgba(0,0,0,.1),
-               0 0 5px rgba(0,0,0,.1),
-               0 1px 3px rgba(0,0,0,.3),
-               0 3px 5px rgba(0,0,0,.2),
-               0 5px 10px rgba(0,0,0,.25),
-               0 10px 10px rgba(0,0,0,.2),
-               0 20px 20px rgba(0,0,0,.15) !important; }
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â  0 2px 0 #c9c9c9,
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â  0 3px 0 #bbb,
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â  0 4px 0 #b9b9b9,
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â  0 5px 0 #aaa,
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â  0 6px 1px rgba(0,0,0,.1),
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â  0 0 5px rgba(0,0,0,.1),
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â  0 1px 3px rgba(0,0,0,.3),
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â  0 3px 5px rgba(0,0,0,.2),
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â  0 5px 10px rgba(0,0,0,.25),
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â  0 10px 10px rgba(0,0,0,.2),
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â  0 20px 20px rgba(0,0,0,.15) !important; }
            .showCase > h2:first-letter{ font-size:26px;}
            ul.product-holder{ width:100%; height: auto; display:flex; display:-webkit-box; display:-moz-box; display: -webkit-flex; display:-ms-flex; list-style-type:none; margin-top:2%;  }
    
@@ -215,28 +230,20 @@ box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
                      }
            .btn{ 
                 width:30%; height:3em; 
-                color:#FFF; border:none;
-                border-radius:20px;  
-                background: rgba(252,234,187,1);
-                background: -moz-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
-                background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(252,234,187,1)), color-stop(50%, rgba(252,205,77,1)), color-stop(51%, rgba(248,181,0,1)), color-stop(100%, rgba(251,223,147,1)));
-                background: -webkit-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
-                background: -o-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
-                background: -ms-linear-gradient(top, rgba(252,234,187,1) 0%, rgba(252,205,77,1) 50%, rgba(248,181,0,1) 51%, rgba(251,223,147,1) 100%);
-                -moz-border-radius:20px;
-                -webkit-border-radius:20px; 
-                -ms-border-radius:20px;
-                -o-border-radius:20px; 
+                color:#333;
+                border:none;
+                font-weight: bold; 
+                background: #f6d046 !important;
                 margin-top: 6%;
                 cursor:pointer;
                 display:block;
                 position:absolute;
-                top:260px;
+                top:300px;
                 text-shadow:0 0 1px transparent;
 
                }
             .btn:hover{
-               color: #f1f1f1;
+               color: #222;
                transition: color ease .3s; 
                -moz-transition: color ease .3s; 
                -webkit-transition: color ease .3s; 
