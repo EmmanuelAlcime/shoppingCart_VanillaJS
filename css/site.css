@@ -7,18 +7,12 @@
           }
           img[src$=".jpg"], img[src$=".png"],img[src$=".gif"] {
                image-rendering: crisp-edges; 
+                object-fit: contain;
            }
          .navigation{
              width:100%;
              height:3em;
             background: rgba(76,76,76,1);
-background: -moz-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(76,76,76,1)), color-stop(12%, rgba(89,89,89,1)), color-stop(25%, rgba(102,102,102,1)), color-stop(39%, rgba(71,71,71,1)), color-stop(50%, rgba(44,44,44,1)), color-stop(51%, rgba(0,0,0,1)), color-stop(60%, rgba(17,17,17,1)), color-stop(76%, rgba(43,43,43,1)), color-stop(91%, rgba(28,28,28,1)), color-stop(100%, rgba(19,19,19,1)));
-background: -webkit-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
-background: -o-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
-background: -ms-linear-gradient(top, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
-background: linear-gradient(to bottom, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(102,102,102,1) 25%, rgba(71,71,71,1) 39%, rgba(44,44,44,1) 50%, rgba(0,0,0,1) 51%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 91%, rgba(19,19,19,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
              border-bottom:thin solid #222;
           }
 
@@ -170,11 +164,12 @@ box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
                 transition: width ease 0.4s; 
                 transition:padding ease 0.4s; 
                 padding:2px;
+                 object-fit: contain;
                  }
            ul.product-holder > li a{ text-decoration:none; }
            .list-holder{ height: 9.9em; padding:0; position: relative; border-top: thin solid #eee;}
            .items{ cursor:pointer; }
-           .shoe-img{ width:77%; height:9.5em; margin-left:22px; padding:3%; image-rendering: crisp-edges;
+           .shoe-img{ width:77%; height:9.5em;  object-fit: contain; margin-left:22px; padding:3%; image-rendering: crisp-edges;
                       box-sizing:border-box; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -ms-box-sizing:border-box; -o-box-sizing:border-box;}
            .shoe-title{ font-size: 22px; font-weight:300; color:#333; text-transform:uppercase; margin-top:2%; margin-left:2%; font-family: 'GeosansLight';} 
            .shoe-year{ display:block; margin-top:5%; color:#444; font-size:12px;margin-left:2%; letter-spacing:3px; font-family: 'GeosansLight';}
@@ -195,11 +190,11 @@ box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
                     }
            #pla{   width: 100%; height: 4em; margin-top: 10%; margin-left:2.5%; }
            #countryHolder{ width: 100%; display:flex; flex-direction:row;}
-           #countryHolder > img{ width: 36px !important; height: 30px; }
+           #countryHolder > img{ width: 36px !important; height: 30px;  object-fit: contain;}
            #countryHolder > p{ margin-left: 2%; line-height: 30px; font-weight: bold; }
            #myItem{ display:flex;}
            .image-holder{ width: 48%;}
-           .image-holder > img{ width: 50%; height:13em; margin-top:4%; margin-left:21%; }
+           .image-holder > img{ width: 50%; height:13em; margin-top:4%; margin-left:21%;  object-fit: contain; }
            .info-holder { width: 48%; height:455px; position:relative; margin-top: 2%; margin-left:12%;}
            .item-title { font-size: 38px;  text-transform: uppercase; margin-top:10%; font-family: 'GeosansLight';} 
            .item-price-holder { width:80%; display:flex; margin-top: 3%; margin-bottom: 5%; font-weight:bold; }
@@ -416,8 +411,8 @@ box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
            #cartItemsHolder{width: 100%; display: flex; flex-direction: column;}
            .cartItems{ display:  flex; flex-direction: row; border-bottom: thin solid #eee;}
            #itemImg{ width: 40%; }
-           #itemImg > img { width: 76%; }
-           img.checkOutImg{ width: 92%;  margin-top: 16%;}
+           #itemImg > img { width: 76%;  object-fit: contain; }
+           img.checkOutImg{ width: 92%;  margin-top: 16%;  object-fit: contain;}
            ._sizeHolder { display:block; width: 30%; height: 2em; background: rgba(0,0,0, .5); }
            ._sizeHolder > p{ margin-left: 2%; color: #FFF; line-height: 28px; font-size: 20px; font-weight: bold; }
            #itemINFO{ width: 40%;  margin-left: 10%; height: 10em;}
@@ -588,8 +583,8 @@ box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
                       box-sizing:border-box; 
                      -moz-box-sizing:border-box; 
                     -webkit-box-sizing:border-box; 
-                    -ms-box-sizing:border-box; -o-box-sizing:border-box;}
-
+                    -ms-box-sizing:border-box; -o-box-sizing:border-box;  object-fit: contain;}
+                     
 
              
            #myItem{ display:flex; flex-direction: column;}
@@ -612,6 +607,7 @@ box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
             #itemImg > img {
                width: 40%;
                margin-left: 4%;
+                object-fit: contain;
             }
 
            #itemINFO {
@@ -686,7 +682,7 @@ box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
                }
 
            .image-holder{ width: 100%;}
-           .image-holder > img{ width: 88%; height:16em; margin-top:4%; margin-left:6%; }
+           .image-holder > img{ width: 88%; height:16em; margin-top:4%; margin-left:6%;  object-fit: contain;}
            .info-holder { width: 100%; height:45S0px; position:relative; margin-left:0.5%;  margin-bottom: 20px;}
            .item-title { font-size: 22px;  text-transform: uppercase; margin-top:4%; margin-bottom:7%; font-family: 'GeosansLight';} 
            .item-price-holder { width:100%; display:flex; margin-top: 3%; margin-bottom: 6%; font-weight:bold; }

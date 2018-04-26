@@ -5,6 +5,18 @@ function showLoader(){
    },3000); 
  }
 
+/*
+  function thanks to stackoverlow
+  uri: https://stackoverflow.com/questions/7332179/how-to-recursively-search-all-parentnodes
+*/
+function findUpTag(el, tag) {
+    while (el.parentNode) {
+        el = el.parentNode;
+        if (el.tagName === tag)
+            return el;
+    }
+    return null;
+}
 
 var value, quantity = document.getElementsByClassName("quantityHolder");
 var buttons = document.getElementsByClassName("buttonHolder");
@@ -40,7 +52,7 @@ var cart = {
        var secondSpan = document.createElement("span");
        secondSpan.setAttribute("id","SubTotal");
        var SubTotal = shoppingCart._subTotal();
-       secondSpan.appendChild(document.createTextNode(shoppingCart._createDecimal(SubTotal.noVAT,1)));
+       secondSpan.appendChild(document.createTextNode(shoppingCart._createDecimal(SubTotal.noVAT,2)));
        bottomDiv.appendChild(secondSpan);
        if(cartObj.length === 0){
            mainDiv.innerHTML ="<p class='no-items'>No Items in Cart <b>"+ cartObj.length +"</b><p>"; 
@@ -117,6 +129,7 @@ var cart = {
            _iGlyph.setAttribute("aria-hidden","true");
            button.appendChild(_iGlyph);
            button.setAttribute("class","removeButtons");
+           button.setAttribute("id","rem");
            spanButton.appendChild(button); 
            div2.appendChild(spanButton);
            uL.appendChild(li);   
@@ -128,29 +141,36 @@ var cart = {
     var quantityAmount  = quantityContainer.getElementsByClassName("quanCount")[0];
     var increase = quantityContainer.getElementsByClassName("increase")[0];
     var decrease = quantityContainer.getElementsByClassName("decrease")[0];
-    var _ul = document.getElementById("cartItemsHolder");
-    var _li = document.getElementsByClassName("cartItems");
     var _removeLi = buttonContainer.getElementsByClassName("removeButtons")[0];
+    var _ul = document.getElementById("cartItemsHolder");
     var item = cartItem;
 
     _removeLi.addEventListener('click',function(e){
-       var _w;
-       _ul.removeChild(_li[0]);
-       console.log("removed from cart item:  "+ item.name);
+       var _w; 
+       var li = findUpTag(e.target, "LI");
+       var addSelected = li.classList.add("selected");
+       if(li) _ul.removeChild(li);
        shoppingCart._removeItem(item);
        const SubTotal = document.getElementById("SubTotal");   
        const TotalFromCart = document.getElementById('SubTotal').innerHTML;
-       if(item.qty > 1){
+        if(item.qty > 1){
           _w = (item.qty * item.price);
-          SubTotal.innerHTML = parseInt(TotalFromCart) - _w;
+          var prie = parseFloat(TotalFromCart) - _w;
+          SubTotal.innerHTML = shoppingCart._createDecimal(prie,2);
+
        }
        else if(item.qty === 1){
-          SubTotal.innerHTML = parseInt(TotalFromCart) - item.price;
+           var prie = parseFloat(TotalFromCart) - item.price;
+          SubTotal.innerHTML = shoppingCart._createDecimal(prie,2);
+
        }
 
-       if(_li.length === 0){
+
+       if(_ul.childNodes.length === 0){
           shoppingCart._emptyCart();
        }
+        console.log("removed from cart item:  "+ item.name);
+      
     });
 
     increase.addEventListener('click', function(e){
