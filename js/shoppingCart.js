@@ -1,31 +1,24 @@
  
 
 /*
-DEVELOPER: Emmanuel Alcime   
-DESCRIPTION: shopping cart script
-DATE: Janaury 10, 2018
+Emmanuel Alcime   
+shopping cart script
+
+
 */
 
 
 
-var cartObj = null;
-var cartCI = -1;
+ var cartObj = null;
 
-/**
- Deleting null values from array
-**/
-Array.prototype.clean = function(deleteValue) {
-  for (var i = 0; i < this.length; i++) {
-    if (this[i] == deleteValue) {         
-      this.splice(i, 1);
-      i--;
-    }
-  }
-  return this;
-};
+ var cartCI = -1;
+
 
 
 shoppingCart = {
+
+  
+
   _getLocalData: function(_name){
 
       return localStorage.getItem(_name);
