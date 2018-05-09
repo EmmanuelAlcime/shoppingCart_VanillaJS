@@ -46,7 +46,7 @@ function showLoader(){
               span2.setAttribute("id","shoe-price");
               span2.appendChild(document.createTextNode("$"+price));
               var shipImg = new Image();
-              shipImg.src ='/img/ships-free-skinny.png';
+              shipImg.src ='https://emmanuelalcime.github.io/shoppingCart_VanillaJS/img/ships-free-skinny.png';
               shipImg.alt = 'shoes ship free.png';
               shipImg.className = 'shippingImgs';
               span2.appendChild(shipImg);
