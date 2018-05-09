@@ -1,9 +1,8 @@
  
 
 /*
-Emmanuel Alcime   
-shopping cart script
-
+DEVELOPER: Emmanuel Alcime   
+DESCRIPTION: shopping cart script
 
 */
 
