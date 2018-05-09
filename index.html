@@ -22,6 +22,9 @@
                  </div><!-- pull right -->
               </div>
              </nav>
+             <div id="CartMenu">
+                 <div id="triangle"></div>
+             </div><!-- cart menu -->
               <div class="container down">
                     <div id="loading-holder"><img src="img/ajax-loader.gif"></div>
                     <div class="showCase" id="hider" >
@@ -31,28 +34,11 @@
                     </div>
 
           </div><!-- container -->
-         <script type="text/javascript" src="js/getElements.js"></script>
-         <script type="text/javascript" src="js/createdElements.js"></script>
-         <script type="text/javascript" src="js/salesTimer.js"></script>
-         <script type="text/javascript" src="js/shoppingCart.js"></script>
-         <script type="text/javascript" src="js/freeUserLoc.js"></script>
-         <script type="text/javascript">
-            function goHome() {
-               window.location='index.html';
-            }
-            function _imageReady(){
-              setTimeout(function(){
-                var images = document.images;
-                for (var i = 0; i < images.length; i++) {
-                     images[i].naturalHeight = '215';
-                     images[i].naturalWidth  = '281';
-                     images[i].draggable = false; 
-                     //console.log(images[i].naturalHeight);
-                }
-              },2000);
-            }
-
-          _imageReady();
-         </script>
+         <script  src="js/getElements.js"></script>
+         <script  src="js/createdElements.js"></script>
+         <script  src="js/salesTimer.js"></script>
+         <script  src="js/shoppingCart.js"></script>
+         <script  src="js/freeUserLoc.js"></script>
+         <!--<script  src="js/showMenu.js"></script>-->
        </body>
  </html>

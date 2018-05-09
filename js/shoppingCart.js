@@ -9,16 +9,12 @@ shopping cart script
 
 
 
- var cartObj = null;
-
- var cartCI = -1;
+var cartObj = null;
+var cartCI = -1;
 
 
 
 shoppingCart = {
-
-  
-
   _getLocalData: function(_name){
 
       return localStorage.getItem(_name);
@@ -119,7 +115,6 @@ shoppingCart = {
           itemInCart++;
         }
      return itemInCart;
-
   },
 
 
@@ -247,22 +242,24 @@ shoppingCart = {
   _emptyCart: function(){
       localStorage.clear();
       this._hideCart();
-     var div = document.getElementById("myCart");
-     for(var i =0; i < div.childNodes.length; i++){
+      if(window.location.href.indexOf('cart') !== -1){
+         var div = document.getElementById("myCart");
+      for(var i =0; i < div.childNodes.length; i++){
            div.removeChild(div.childNodes[i]);
          if(div.childNodes.length > 0){
              div.removeChild(div.childNodes[i]);
              document.getElementById("lastDiv").style.display="none";
+          }
+        }
+          var p = document.createElement("p");
+          p.innerHTML="Cart Empty";
+          p.setAttribute("class","no-items");
+          div.appendChild(p);
          }
-     }
-     var p = document.createElement("p");
-     p.innerHTML="Cart Empty";
-     p.setAttribute("class","no-items");
-     div.appendChild(p);
-     var visualCart =  document.getElementById("cart-count");
-     visualCart.style.display="block"; 
-     visualCart.innerHTML = 0;
-  }, 
+          var visualCart =  document.getElementById("cart-count");
+          visualCart.style.display="block"; 
+          visualCart.innerHTML = 0;
+       }, 
 
   
 
