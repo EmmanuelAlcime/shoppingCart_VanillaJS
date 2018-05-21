@@ -114,7 +114,7 @@ shoppingCart = {
     for(var xr in cartObj){
         // find index of element in this routine so i didn't used  Of in iteration
         r = cartObj[xr];
-       if(r==null) countinue; // remove rows - ignore  it
+       if(r==null) continue; // remove rows - ignore  it
           itemInCart++;
         }
      return itemInCart;
