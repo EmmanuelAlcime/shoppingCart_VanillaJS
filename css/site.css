@@ -680,7 +680,11 @@ box-shadow: -1px 1px 11px -1px rgba(0,0,0,0.75);
                      
 
              
-           #myItem{ display:flex; flex-direction: column;}
+           #myItem {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
            #myCart {
               width: 100%;
               height: auto;
